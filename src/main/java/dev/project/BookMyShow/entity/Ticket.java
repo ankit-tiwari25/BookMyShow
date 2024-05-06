@@ -1,4 +1,5 @@
 package dev.project.BookMyShow.entity;
 
-public class Ticket {
+public class Ticket extends BaseModel{
+
 }

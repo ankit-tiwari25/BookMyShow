@@ -1,9 +1,6 @@
 package dev.project.BookMyShow.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Entity
+@MappedSuperclass
 public class BaseModel {
      @Id
      @GeneratedValue (strategy =  GenerationType.AUTO)
@@ -21,6 +18,7 @@ public class BaseModel {
      private String createdBy; //User name
      private String updatedBy; // User name
 
-
-
+     public BaseModel() {
+          this.createdAt = LocalDateTime.now();
+     }
 }
